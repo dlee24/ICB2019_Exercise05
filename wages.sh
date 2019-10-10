@@ -1,7 +1,6 @@
 #!bin/sh
-#usage:
+#usage: bash wages.sh
 #Logan Thayer and Diane Lee's script
-
 
 
 
