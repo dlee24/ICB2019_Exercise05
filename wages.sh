@@ -13,3 +13,7 @@ cat wages.csv | grep -v "gender" | sort -t , -nrk4 | cut -d , -f 1,2,4 | tail -n
 echo "Number of Women in Top 10 Earners:"
 cat wages.csv | grep -v "gender" | sort -t , -nrk4 | head -n 10 | grep -E "female" | wc -l
 
+echo "Graduating College Increases Minimum Wage By:"
+col=$(cat wages.csv | grep -v "gender" | grep -E ".+,.+,16" | sort -t , -nk4 | cut -d , -f 4 | head -n 1)
+hs=$(cat wages.csv | grep -v "gender" | grep -E ".+,.+,12" | sort -t , -nk4 | cut -d , -f 4 | head -n 1)
+echo "$col - $hs" | bc
